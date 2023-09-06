@@ -25,4 +25,6 @@
     <string name="display_address_template">Address\n%1$s</string>
     <string name="display_last_modified_date_template">Last Update Time\n%1$s</string>
     <string name="display_language">Display Language</string>
+
+    <string name="txt_logo">Enjoy your time</string>
 </resources>
