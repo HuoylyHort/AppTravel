@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.DEFAULT_ARGS_KEY
 import androidx.lifecycle.viewmodel.MutableCreationExtras
+import com.example.apptravel.attractionPlace.adapter.PhotoSliderAdapter
 import com.example.apptravel.attractionPlace.dataModel.AttractionPlace
 import com.example.apptravel.attractionPlace.ui.activity.AttractionPlaceDetailActivity
 import com.example.apptravel.attractionPlace.ui.activity.WebViewActivity
@@ -28,7 +29,6 @@ class AttractionPlaceDetailFragment : BaseFragment<FragmentAttractionPlaceDetail
             set(DEFAULT_ARGS_KEY, bundle)
         }
     })
-
     override fun getToolbar(): MaterialToolbar? {
         return binding.toolbar
     }
@@ -44,9 +44,22 @@ class AttractionPlaceDetailFragment : BaseFragment<FragmentAttractionPlaceDetail
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         setToolbarTitle(attractionPlace?.name)
+        bindImage()
         binding.textviewOfficialUrl.setOnClickListener(DelayClickListener().onDelayClick {
             startActivity(WebViewActivity.newInstance(requireContext(), attractionPlace?.url))
         })
+    }
+
+
+    private fun bindImage(){
+        attractionPlace?.run {
+            if (images.isNotEmpty()){
+                binding.viewPager.adapter = PhotoSliderAdapter(requireActivity(), images)
+                binding.apply {
+                    binding.viewPager
+                }
+            }
+        }
     }
 
 
