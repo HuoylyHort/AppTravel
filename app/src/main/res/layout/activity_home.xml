@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +11,14 @@
             android:id="@+id/root_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bn_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_bar"
+            app:labelVisibilityMode="labeled"
+            android:background="@color/color_nav"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
