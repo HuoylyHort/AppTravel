@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_home"
         />
     <item
-        android:title="Detail"
-        android:id="@+id/detailPage"
-        android:icon="@drawable/ic_details"
+        android:title="Account"
+        android:id="@+id/accountPage"
+        android:icon="@drawable/ic_account"
         />
     <item
         android:title="More"
