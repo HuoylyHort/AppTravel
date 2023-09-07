@@ -16,18 +16,12 @@ class StarterActivity : AppCompatActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_starter)
-
+        startActivity(Intent(this, HomeActivity::class.java))
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-
-
-
-
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
         }, 2000)
     }
 }
