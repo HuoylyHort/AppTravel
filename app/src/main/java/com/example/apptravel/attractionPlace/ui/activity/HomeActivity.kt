@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.apptravel.R
+import com.example.apptravel.attractionPlace.ui.fragment.AccountFragment
 import com.example.apptravel.attractionPlace.ui.fragment.HomeFragment
 import com.example.apptravel.attractionPlace.ui.fragment.MoreFragment
 import com.example.apptravel.databinding.ActivityHomeBinding
@@ -50,6 +51,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             R.id.morePage -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.root_view, MoreFragment()).commit()
+            }
+            R.id.accountPage -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.root_view, AccountFragment()).commit()
             }
         }
     }
